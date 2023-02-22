@@ -1,0 +1,290 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <br>
+            <br>
+            <div class="other-section">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link active" href="#Profile">Profile</a>
+                    </li>
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link" href="#Contact">Contact</a>
+                    </li>
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link" href="#Skills">Skills</a></li>
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link" href="#Experience">Experience</a>
+                    </li>
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link" href="#Awards">Awards</a></li>
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link" href="#Languages">Languages</a>
+                    </li>
+                    <li class="nav-item"><a data-bs-toggle="pill" class="nav-link" href="#Education">Education</a>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="tab-content">
+
+                        <div id="Contact" class="tab-pane fade">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput3" class="form-label">Contact number</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput3"
+                                       placeholder="" name="phone_number" value="{{ items.phone_number }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput4" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput4"
+                                       placeholder="name@example.com" name="email" value="{{ items.email }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput5" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput5"
+                                       placeholder="" name="address" value="{{ items.address }}">
+
+                            </div>
+
+                        </div>
+
+                        <div id="Skills" class="tab-pane fade ">
+                            <p>Note : You can add maximum 6 skills.</p>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput6" class="form-label">Skill 01</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput6"
+                                       placeholder="" name="skill_01" value="{{ items.skill_01 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput7" class="form-label">Skill 02</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput7"
+                                       placeholder="" name="skill_02" value="{{ items.skill_02 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput8" class="form-label">Skill 03</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput8"
+                                       placeholder="" name="skill_03" value="{{ items.skill_03 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput9" class="form-label">Skill 04</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput9"
+                                       placeholder="" name="skill_04" value="{{ items.skill_04 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10" class="form-label">Skill 05</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput10"
+                                       placeholder="" name="skill_05" value="{{ items.skill_05 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput11" class="form-label">Skill 06</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput11"
+                                       placeholder="" name="skill_06" value="{{ items.skill_06 }}">
+                            </div>
+                        </div>
+
+
+                        <div id="Profile" class="tab-pane active">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="CV Title goes here." name="title" value="{{ items.title }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput39" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput39"
+                                       placeholder="" name="first_name" value="{{ items.first_name }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput40" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput40"
+                                       placeholder="" name="last_name" value="{{ items.last_name }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput2" class="form-label">Profession</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput2"
+                                       placeholder="What is your profession?" name="profession" value="{{ items.profession }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput90" class="form-label">Profile details</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput90"
+                                       placeholder="" name="profile_detail" value="{{ items.profile_detail }}">
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Choose Picture</label>
+                                <input class="form-control" type="file" id="formFile" name="images"
+                                       value="{{ items.image }}">
+                            </div>
+
+
+                        </div>
+
+                        <div id="Experience" class="tab-pane fade">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput19" class="form-label">Job Title 01</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput19"
+                                       placeholder="" name="job_title_01" value="{{ items.job_title_01 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput20" class="form-label">Joining Year</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput20"
+                                       placeholder="" name="j1_j_d" value="{{ items.j1_j_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput41" class="form-label">Job 01 Details</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput41"
+                                       placeholder="" name="job_details_01" value="{{ items.job_details_01 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput21" class="form-label">Leaving Year</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput21"
+                                       placeholder="" name="j1_l_d" value="{{ items.j1_l_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput22" class="form-label">Job Title 02</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput22"
+                                       placeholder="" name="job_title_02" value="{{ items.job_title_02 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput42" class="form-label">Job 02 Details</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput42"
+                                       placeholder="" name="job_details_02" value="{{ items.job_details_02 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput23" class="form-label">Joining Year</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput23"
+                                       placeholder="" name="j2_j_d" value="{{ items.j2_j_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput24" class="form-label">Leaving Year</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput24"
+                                       placeholder="" name="j2_l_d" value="{{ items.j2_l_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput25" class="form-label">Job Title 03</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput25"
+                                       placeholder="" name="job_title_03" value="{{ items.job_title_03 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput43" class="form-label">Job 03 Details</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput43"
+                                       placeholder="" name="job_details_03" value="{{ items.job_details_03 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput26" class="form-label">Joining Year</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput26"
+                                       placeholder="" name="j3_j_d" value="{{ items.j3_j_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput27" class="form-label">Leaving Year</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput27"
+                                       placeholder="" name="j3_l_d" value="{{ items.j3_l_d }}">
+                            </div>
+                        </div>
+                        <div id="Awards" class="tab-pane fade">
+                            <p>Note : You can add maximum 5 Awards.</p>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput14" class="form-label">Award 01</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput14"
+                                       placeholder="" name="award_01" value="{{ items.award_01 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput15" class="form-label">Award 02</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput15"
+                                       placeholder="" name="award_02" value="{{ items.award_02 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput16" class="form-label">Award 03</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput16"
+                                       placeholder="" name="award_03" value="{{ items.award_03 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput17" class="form-label">Award 04</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput17"
+                                       placeholder="" name="award_04" value="{{ items.award_04 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput18" class="form-label">Award 05</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput18"
+                                       placeholder="" name="award_05" value="{{ items.award_05 }}">
+                            </div>
+                        </div>
+                        <div id="Languages" class="tab-pane fade">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput12" class="form-label">Primary langage</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput12"
+                                       placeholder="" name="language_01" value="{{ items.language_01 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput13" class="form-label">Secondary language</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput13"
+                                       placeholder="" name="language_02" value="{{ items.language_02 }}">
+                            </div>
+                        </div>
+                        <div id="Education" class="tab-pane fade">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput28" class="form-label">School Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput28"
+                                       placeholder="" name="school" value="{{ items.school }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput29" class="form-label">School Joining Date</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput29"
+                                       placeholder="" name="s_j_d" value="{{ items.s_j_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput30" class="form-label">School Leaving Date</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput30"
+                                       placeholder="" name="s_l_d" value="{{ items.s_l_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput31" class="form-label">College Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput31"
+                                       placeholder="" name="college" value="{{ items.college }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput32" class="form-label">College Joining Date</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput32"
+                                       placeholder="" name="c_j_d" value="{{ items.c_j_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput33" class="form-label">College Leaving Date</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput33"
+                                       placeholder="" name="c_l_d" value="{{ items.c_l_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput34" class="form-label">University Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput34"
+                                       placeholder="" name="university" value="{{ items.university }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput35" class="form-label">University Joining
+                                    Date</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput35"
+                                       placeholder="" name="u_j_d" value="{{ items.u_j_d }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput36" class="form-label">University Leaving
+                                    Date</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput36"
+                                       placeholder="" name="u_l_d" value="{{ items.u_l_d }}">
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success">Submit</button>
+
+
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

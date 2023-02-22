@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Register {% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 style="text-align:center; color:#7da57a  ; border-bottom: 2px solid #7da57a ; padding-bottom:15px;">
+                Register </h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Hey! </strong>{{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                           placeholder="Enter firstname" name="firstname">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2"
+                           placeholder="Enter Lastname" name="lastname">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput3" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput3"
+                           placeholder="Enter Username" name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput4"
+                           placeholder="name@example.com" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput5" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleFormControlInput5"
+                           placeholder="Enter Password" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput6" class="form-label">Confirm Password</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput6"
+                           placeholder="Confirm Password" name="conf_password">
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-outline-success">Sign-up</button>
+                    </div>
+                    <div class="col-4">
+                        <a href="{% url 'login'%}">Already have an account?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

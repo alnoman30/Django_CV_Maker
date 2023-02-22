@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css'%}"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="main">
+    <div class="top-section">
+        <img src="{{ items.profile_pic.url }}" class="profile"/>
+        <p class="p1"><span> {{ items.first_name }} </span>{{ items.last_name }}</p>
+        <p class="p2">{{ items.profession }}</p>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="col-div-4">
+        <div class="content-box" style="padding-left: 40px;">
+
+
+            <p class="head">Contact</p>
+            <p class="p3"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;{{ items.phone_number }}</p>
+            <p class="p3"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;&nbsp;{{ items.email }}</p>
+            <p class="p3"><i class="fa fa-home" aria-hidden="true"></i> &nbsp;&nbsp;{{ items.address }}</p>
+
+
+            <br/>
+            <p class="head">my skills</p>
+            <ul class="skills">
+                <li><span>{{ items.skill_01 }}</span></li>
+                <li><span>{{ items.skill_02 }}</span></li>
+                <li><span>{{ items.skill_03 }}</span></li>
+                <li><span>{{ items.skill_04 }}</span></li>
+                <li><span>{{ items.skill_05 }}</span></li>
+                <li><span>{{ items.skill_06 }}</span></li>
+
+            </ul>
+
+            <br/>
+            <p class="head">awards</p>
+            <p class="p3">{{ items.award_01 }}</p>
+            <p class="p3">{{ items.award_02 }}</p>
+            <p class="p3">{{ items.award_03 }}</p>
+            <p class="p3">{{ items.award_04 }}</p>
+            <p class="p3">{{ items.award_05 }}</p>
+
+
+            <br/>
+            <p class="head">Languages</p>
+            <p class="p3">{{ items.language_01 }}</p>
+            <p class="p3">{{ items.language_02 }}</p>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="col-div-8">
+        <div class="content-box">
+            <p class="head">profile</p>
+            <p class="p3" style="font-size: 14px;">{{ items.profile_detail }}</p>
+            <br/>
+            <p class="head">EXPERIENCE</p>
+
+            <p>{{ items.job_title_01 }} ( {{ items.j1_j_d }}-{{ items.j1_l_d }} )</p>
+            <p class="p-4">
+                {{ items.job_details_01 }}</p>
+
+            <p>{{ items.job_title_02 }} ( {{ items.j2_j_d }}-{{ items.j2_l_d }} )</p>
+            <p class="p-4">
+                {{ items.job_details_02 }}
+            </p>
+
+            <p>{{ items.job_title_03 }} ( {{ items.j3_j_d }}-{{ items.j3_l_d }} )</p>
+            <p class="p-4">
+                {{ items.job_details_03 }}</p>
+
+
+            <br/>
+
+            <p class="head">Education</p>
+            <p class="p-4">{{ items.school }} ( {{ items.s_j_d }}-{{ items.s_l_d }} )</p>
+            <p class="p-4">{{ items.college }} ( {{ items.c_j_d }}-{{ items.c_l_d }} )</p>
+            <p class="p-4">{{ items.university }} ( {{ items.u_j_d }}-{{ items.u_l_d }} )</p>
+
+
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+</div>
+<br/>
+</body>
+</html>
